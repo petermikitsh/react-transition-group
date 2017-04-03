@@ -27,7 +27,16 @@ export function transitionTimeout(transitionType) {
   };
 }
 
-export const nameShape = React.PropTypes.oneOfType([
+export const timeoutsShape = React.PropTypes.oneOfType([
+  React.PropTypes.number,
+  React.PropTypes.shape({
+    appear: React.PropTypes.number,
+    enter: React.PropTypes.number,
+    exit: React.PropTypes.number,
+  }).isRequired,
+]).isRequired;
+
+export const classNamesShape = React.PropTypes.oneOfType([
   React.PropTypes.string,
   React.PropTypes.shape({
     enter: React.PropTypes.string,
